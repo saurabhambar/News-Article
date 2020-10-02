@@ -1,0 +1,24 @@
+Hibernate:
+    create table article (
+        article_id integer not null auto_increment,
+        author varchar(255) not null,
+        content varchar(255) not null,
+        description varchar(255) not null,
+        published_at varchar(255) not null,
+        title varchar(255) not null,
+        url varchar(255) not null,
+        url_to_image varchar(255) not null,
+        source_id varchar(255) not null,
+        primary key (article_id)
+    ) ENGINE=InnoDB
+Hibernate:
+    create table source (
+        source_id varchar(255) not null,
+        name varchar(255) not null,
+        primary key (source_id)
+    ) ENGINE=InnoDB
+Hibernate:
+    alter table article
+        add constraint FK3ltucw25icv8f9x6ek63mmtkj
+        foreign key (source_id)
+        references source (source_id)
